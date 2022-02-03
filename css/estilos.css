@@ -18,12 +18,14 @@ header{
     font-style: normal;
     font-weight: bold;
     font-size: 56px;
-    width: 100vw;
+    width: 100%;
     color: #75B79E;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 40px;
 }
+
 
 main{
     display: flex;
