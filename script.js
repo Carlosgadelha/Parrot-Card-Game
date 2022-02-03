@@ -9,9 +9,11 @@ while ( entrada) {
   quantidadeCartas = parseInt(prompt("Qual a quantidade de Cartas?"))
   
   if(Number.isInteger(quantidadeCartas)){
-    if(quantidadeCartas%2 === 0 && quantidadeCartas >= 4 && quantidadeCartas <=14 )
-    jogo(quantidadeCartas)
-    entrada = false 
+    if(quantidadeCartas % 2 === 0 && quantidadeCartas >= 4 && quantidadeCartas <=14 ){
+      jogo(quantidadeCartas)
+      entrada = false 
+    }
+    
   } else entrada = true
 }
 
