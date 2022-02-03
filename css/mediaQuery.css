@@ -1,11 +1,7 @@
 @media (max-width: 614px) {
 
 h1{
-    background-color: yellow;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    text-align: center;
 }
 
 main{
