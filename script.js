@@ -1,42 +1,55 @@
 const animais = ["Leão","girafa","elefante","zebra","hipopotamo","tigre","macaco"];
-let cardAtual, cardAnterior, controlador, carta01, carta02, cartas, main
+let cardAtual, cardAnterior, controlador, carta01, carta02, cartas, main, entrada
 
+entrada = true
 cartas = []
 controlador = false
 
-main = document.querySelector("main")
+while ( entrada) {
+  quantidadeCartas = parseInt(prompt("Qual a quantidade de Cartas?"))
+  
+  if(Number.isInteger(quantidadeCartas)){
+    if(quantidadeCartas%2 === 0 && quantidadeCartas >= 4 && quantidadeCartas <=14 )
+    jogo(quantidadeCartas)
+    entrada = false 
+  } else entrada = true
+}
 
-animais.sort(comparador); // Após esta linha, a minhaArray estará embaralhada
 
 
-// Esta função pode ficar separada do código acima, onde você preferir
+
+function jogo(quantidadeCartas){
+
+  main = document.querySelector("main")
+  animais.sort(comparador); 
+  
+  for (let i = 0; i < quantidadeCartas/2; i++) {
+    cartas.push(animais[i],animais[i])
+  }
+
+  cartas.sort(comparador);
+
+  cartas.forEach(element => {
+      main.innerHTML += `
+
+      <div class="card" onclick="virarCartas(this,'${element}')">
+        <div class=" face">
+        <img src="./imagens/front.png">
+        </div>
+        <div class="back-face face">
+          <img src="./imagens/${element}.png">
+        </div>
+      </div>
+  `
+      
+  });
+
+}
+
+
 function comparador() { 
 	return Math.random() - 0.5; 
 }
-
-
-for (let i = 0; i < animais.length; i++) {
-    cartas.push(animais[i],animais[i])
-}
-
-cartas.sort(comparador);
-
-cartas.forEach(element => {
-     main.innerHTML += `
-
-     <div class="card" onclick="virarCartas(this,'${element}')">
-      <div class=" face">
-      <img src="./imagens/front.png">
-      </div>
-      <div class="back-face face">
-        <img src="./imagens/${element}.png">
-      </div>
-    </div>
-`
-     
- });
-
- 
 
  function virarCartas(carta,animal){
    
