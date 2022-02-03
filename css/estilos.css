@@ -14,7 +14,6 @@ body{
 }
 
 header{
-    background-color: yellow;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -26,31 +25,51 @@ header{
     margin-top: 40px;
 }
 
-h1{
-    background-color: blue;
-}
-
 main{
     display: flex;
     margin-top: 47px;
-    background-color: gray;
     flex-wrap: wrap;
-    /* width: 872px; */
+    width: 872px;
     
 }
 
-main div {
+main .card {
+    width: 117px;
+    height: 146px;
+    position: relative;
+    margin-right: 34px;
+    margin-bottom: 34px;
+}
+
+main .face {
     background-color: rgba(167, 233, 175, 1);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 34px;
-    margin-bottom: 34px;
-    width: 117px;
-    height: 146px;
+    backface-visibility: hidden;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all .5s;
+    transform-style: preserve-3d;
+    
 }
 
-/* div:nth-child(6n){ margin-right: 0px;} */
+.back-face {
+    transform: rotateY(180deg);
+  }
+
+.back-face1 {
+    transform: rotateY(0deg);
+  }
+
+.front-face {
+    transform: rotateY(-180deg);
+  }
+
+div:nth-child(6n){ margin-right: 0px;}
 
 img {
     width: 100px;
