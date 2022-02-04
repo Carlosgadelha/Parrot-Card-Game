@@ -27,7 +27,21 @@ header{
 }
 
 
-main{
+.relogio{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.relogio ion-icon{
+    margin-right: 2px;
+    font-size: 20px;
+    color: #75B79E;
+}
+
+
+.cards{
     display: flex;
     /* justify-content: space-around; */
     margin-top: 47px;
@@ -36,7 +50,7 @@ main{
     
 }
 
-main .card {
+.cards .card {
     width: 117px;
     height: 146px;
     position: relative;
@@ -44,7 +58,7 @@ main .card {
     margin-bottom: 34px;
 }
 
-main .face {
+.cards .face {
     background-color: rgba(167, 233, 175, 1);
     display: flex;
     align-items: center;
@@ -72,7 +86,7 @@ main .face {
     transform: rotateY(-180deg);
   }
 
-div:nth-child(6n){ margin-right: 0px;}
+.cards div:nth-child(6n){ margin-right: 0px;}
 
 img {
     width: 100px;

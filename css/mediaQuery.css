@@ -4,13 +4,12 @@ h1{
     text-align: center;
 }
 
-main{
+.cards{
     width: 117px;
 }
 
-main .card { 
+.cards .card { 
     margin-right: 0px;
 }
-
 
 }
